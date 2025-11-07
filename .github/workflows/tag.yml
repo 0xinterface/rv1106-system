@@ -22,7 +22,7 @@ jobs:
         with:
           script: |
             const { GITHUB_REPOSITORY, GITHUB_SHA } = process.env;
-            const ref = '${{ github.event.inputs.tag }}';
+            const ref = 'tags/${{ github.event.inputs.tag }}';
             await github.rest.git.updateRef({
               owner: GITHUB_REPOSITORY.split('/')[0],
               repo: GITHUB_REPOSITORY.split('/')[1],
